@@ -20,10 +20,30 @@ nft pack dir
 
 generates `index.car` which includes `a` but not `dir`.
 
+For example, 
+
+```
+- nft_project_directory
+  - 0.png
+  - 0.json
+  - ...
+```
+Then using the cli:
+```
+nft pack nft_project_directory
+```
+
+
+Produces an `index.car`, which contains the files in the directory.
+
 ## Upload
 
 Requires the environment variable `NFT_STORAGE_API_TOKEN` or `--api-key ...` from [`nft.storage`](https://nft.storage)
 
 ```bash
-nft upload <path/to/file.car>
+nft upload index.car
+```
+
+```bash
+nft upload index.car --api-key # fill in here
 ```
